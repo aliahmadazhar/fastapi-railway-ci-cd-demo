@@ -1,10 +1,11 @@
 #!/bin/bash
-# Start FastAPI app on Railway
 
-# Install dependencies (if not already installed)
-pip install --upgrade pip
-pip install -r app/requirements.txt
+# Upgrade pip
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip
 
-# Start the FastAPI app with uvicorn
-# Railway sets the PORT environment variable automatically
+# Install dependencies
+python -m pip install -r app/requirements.txt
+
+# Start the FastAPI app
 uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
