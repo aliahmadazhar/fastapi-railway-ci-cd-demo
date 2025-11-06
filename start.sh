@@ -1,3 +1,5 @@
+bash start.sh
+
 #!/bin/bash
 
 # Upgrade pip
