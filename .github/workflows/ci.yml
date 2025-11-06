@@ -45,12 +45,7 @@ jobs:
       - name: Install Railway CLI
         run: curl -fsSL https://railway.app/install.sh | sh
 
-      - name: Link Railway Project
-        run: railway link --project 22238d32-5c8c-48e6-8443-6f19e786fb32
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-
       - name: Deploy to Railway
-        run: railway up --yes
+        run: railway up --project 22238d32-5c8c-48e6-8443-6f19e786fb32 --yes
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
