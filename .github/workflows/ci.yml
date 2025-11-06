@@ -46,6 +46,7 @@ jobs:
         run: curl -fsSL https://railway.app/install.sh | sh
 
       - name: Deploy to Railway
-        run: railway up --project 22238d32-5c8c-48e6-8443-6f19e786fb32 --yes
+        run: railway up --yes
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
