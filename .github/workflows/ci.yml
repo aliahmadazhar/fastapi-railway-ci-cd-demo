@@ -27,7 +27,9 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest -v
+        run: |
+          export PYTHONPATH=.
+          pytest -v
 
   deploy:
     name: Deploy to Railway
