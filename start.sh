@@ -1,13 +1,14 @@
-bash start.sh
-
 #!/bin/bash
+set -e
 
-# Upgrade pip
-python -m ensurepip --upgrade
+# Move to app directory
+cd /app
+
+# Upgrade pip (simple)
 python -m pip install --upgrade pip
 
 # Install dependencies
-python -m pip install -r app/requirements.txt
+pip install -r requirements.txt
 
-# Start the FastAPI app
-uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
+# Start FastAPI app
+uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
